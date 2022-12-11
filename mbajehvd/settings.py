@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'MRE_Soft',
     'newyear',
+    'task',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
