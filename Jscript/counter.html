@@ -12,18 +12,26 @@
 <script>
     let counter = 0;
         
-    function count(){
+    function count() {
         counter++;
-        alert(counter);
+       document.querySelector('h1').innerHTML = counter;
+
+       if (counter % 10 === 0) {
+        alert(`count is now ${counter}`);
     }
+}
+    document.addEventListener( 'DOMContentLoaded', function() {
+        document.querySelector('button').onclick = count;
+    });
+    
        
     </script>
 </head>
-<body>
+<body style="Text-align: center">
     <h1>
-        hello
+        0
     </h1>
-    <a name="" id="" class="btn btn-primary" href="#" role="button" onclick="count()">count</a>
-
+    <button style="color: red; background-color: #07BCE8">Count</button>
+   
 </body>
 </html>
