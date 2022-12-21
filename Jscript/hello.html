@@ -10,23 +10,24 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <script>
-        function hello() {
-            const heading = document.querySelector('h1');
-            if (heading.innerHTML === 'Hello!') {
-                heading.innerHTML = 'Goodbye!';
-            } else {
-                heading.innerHTML = 'Hello!';
-            }
-                
-        }
-           
+        document.addEventListener ("DOMContentLoaded", function() {
+
+            document.querySelector('form').onsubmit = function() {
+                const name = document.querySelector('#name').value;
+                alert (`hello, ${name}`)
+            } ;
+
+        });
     </script>
 </head>
-<body>
+<body style="Text-align: center">
     <h1>
         Hello!
     </h1>
-    <a name="" id="" class="btn btn-primary" href="#" role="button" onclick="hello()">Click here</a>
+   <form>
+        <input autforcus id="name" placeholder="Name" type="text">
+        <input type="submit">
+   </form>
 
 </body>
 </html>
