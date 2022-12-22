@@ -9,10 +9,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            document.querySelector('form').submit = () => {
-                const task document.querySelector('#task').value;
-                console.log(task);
+        document.addEventListener('DOMContentLoaded', function() {
+
+            //by default  submit button is disabled
+            document.querySelector('#submit').disabled = true;
+
+            document.querySelector('#task').onkeyup = () => {
+                if (document.querySelector('#task').value.length > 0) {
+                    document.querySelector('#submit').disabled = false;
+                }
+                else{
+                    document.querySelector('#submit').disabled = true;
+                }
+               
+            }
+                        document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('#task').value;
+               
+                
+
+                const li = document.createElement('li');
+                li.innerHTML = task;
+
+                document.querySelector('#tasks').append(li);
+
+                document.querySelector('#tasks').value = '';
+                document.querySelector('#submit').disabled = true;
+
+
 
                 //stop form submiting process
                 return false;
@@ -24,11 +48,12 @@
     <h1>
         Tasks
     </h1>
-    <ul id="tasks"></ul>
+    <ul id="tasks">
+
+    </ul>
     <form>
         <input id="task" placeholder="New task" type="text">
-        <input id="submit" type="submit" value="Submit">
+        <input id="submit" type="submit">
     </form>
-
 </body>
 </html>
