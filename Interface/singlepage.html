@@ -12,14 +12,14 @@
     </style>
     <script>
         function showPage(page) {
-            document.querySelectorAll('div').forEach(div => div {
+            document.querySelectorAll('div').forEach(div => {
                 div.style.display = 'none';
-            });
-            doccument.querySelector(`#${page}`).style.display ='block';
+            })
+            document.querySelector(`#${page}`).style.display = 'block';
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('button').forEach(button => b{
+            document.querySelectorAll('button').forEach(button => {
                 button.onclick = function() {
                     showPage(this.dataset.page);
                 }
@@ -35,10 +35,10 @@
     <div id="page1">
         <h1>This is page 1.</h1>
     </div>
-    <div id="page1">
+    <div id="page2">
         <h1>This is page 2.</h1>
     </div>
-    <div id="page1">
+    <div id="page3">
         <h1>This is page 3.</h1>
     </div>
 </body>
